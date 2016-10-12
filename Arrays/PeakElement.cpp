@@ -123,11 +123,9 @@ find_any_peak_element(RandomAccessIterator begin, RandomAccessIterator end)
 		auto prev = middle - 1, next = middle + 1;
 		if (*middle >= *prev && *middle >= *next) {
 			return middle;
-		}
-		else if (*middle < *prev) {
+		} else if (*middle < *prev) {
 			end = prev;
-		}
-		else {
+		} else {
 			begin = next;
 		}
 	}
