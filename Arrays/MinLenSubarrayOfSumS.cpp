@@ -36,15 +36,13 @@ run_test(RandomAccessIterator begin, RandomAccessIterator end, typename std::ite
 
 	if (n2 == std::numeric_limits<size_t>::max()) {
 		std::cout << "None";
-	}
-	else {
+	} else {
 		std::cout << n2;
 	}
 	std::cout << "\t";
 	if (n == std::numeric_limits<size_t>::max()) {
 		std::cout << "None";
-	}
-	else {
+	} else {
 		std::cout << n;
 	}
 	std::cout << "\n";

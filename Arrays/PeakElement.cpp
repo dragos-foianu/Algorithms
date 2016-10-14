@@ -3,35 +3,35 @@
 #include <array>
 
 /* Problem statement:
- * An element is a peak element if it is greater than the adjacent elements to its left and right.
- */
+* An element is a peak element if it is greater than the adjacent elements to its left and right.
+*/
 
 /*
- * Linear search to find a list of peak elements.
- * Time Complexity: O(n)
- */
+* Linear search to find a list of peak elements.
+* Time Complexity: O(n)
+*/
 template <typename RandomAccessIterator>
 std::vector<typename std::iterator_traits<RandomAccessIterator>::value_type>
 find_all_peak_elements(RandomAccessIterator begin, RandomAccessIterator end);
 
 /*
- * Binary search to find any one peak element.
- * Time Complexity: O(log(n)
- */
+* Binary search to find any one peak element.
+* Time Complexity: O(log(n)
+*/
 template <typename RandomAccessIterator>
 RandomAccessIterator
 find_any_peak_element(RandomAccessIterator begin, RandomAccessIterator end);
 
 /*
- * Runs the algorithms and prints results on a given array.
- */
+* Runs the algorithms and prints results on a given array.
+*/
 template <typename RandomAccessIterator>
 void
 run_test(RandomAccessIterator begin, RandomAccessIterator end)
 {
 	auto all = find_all_peak_elements(begin, end);
 	auto any = find_any_peak_element(begin, end);
-	
+
 	if (any == end) {
 		std::cout << "None";
 	} else {

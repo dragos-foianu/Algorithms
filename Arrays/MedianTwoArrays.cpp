@@ -3,22 +3,22 @@
 #include <array>
 
 /* Problem statement:
- * Given two sorted arrays, find the median of the merged array.
- */
+* Given two sorted arrays, find the median of the merged array.
+*/
 
 /*
- * Merge the two arrays using Mergesort's merge() operation and find the median.
- * Time Complexity: O(n)
- */
+* Merge the two arrays using Mergesort's merge() operation and find the median.
+* Time Complexity: O(n)
+*/
 template <typename RandomAccessIterator>
 double
 median_merged(RandomAccessIterator a1begin, RandomAccessIterator a1end,
 	RandomAccessIterator a2begin, RandomAccessIterator a2end);
 
 /*
- * Binary search-like algorithm for finding median of equally sized arrays.
- * Time Complexity: O(log(n)) if arrays are equally sized, otherwise uses median_merged for O(n)
- */
+* Binary search-like algorithm for finding median of equally sized arrays.
+* Time Complexity: O(log(n)) if arrays are equally sized, otherwise uses median_merged for O(n)
+*/
 template <typename RandomAccessIterator>
 double
 median_binary(RandomAccessIterator a1begin, RandomAccessIterator a1end,
@@ -82,8 +82,7 @@ median_merged(RandomAccessIterator a1begin, RandomAccessIterator a1end,
 	for (; a1begin != a1end && a2begin != a2end;) {
 		if (*a1begin < *a2begin) {
 			merged.push_back(*(a1begin++));
-		}
-		else {
+		} else {
 			merged.push_back(*(a2begin++));
 		}
 	}
@@ -158,10 +157,9 @@ median_binary(RandomAccessIterator a1begin, RandomAccessIterator a1end,
 		* our two medians in the sorted array
 		*/
 		if (m1 < m2) {
-			a1begin += (size1 ) / 2;
-			a2end -= (size2 ) / 2;
-		}
-		else {
+			a1begin += (size1) / 2;
+			a2end -= (size2) / 2;
+		} else {
 			a2begin += (size2) / 2;
 			a1end -= (size1) / 2;
 		}

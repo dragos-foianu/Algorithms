@@ -6,9 +6,9 @@
 */
 
 /*
- * Finds majority element via sorting.
- * Time Complexity: O(n * log(n)
- */
+* Finds majority element via sorting.
+* Time Complexity: O(n * log(n)
+*/
 template <typename RandomAccessIterator>
 RandomAccessIterator
 find_majority_element_sort(RandomAccessIterator begin, RandomAccessIterator end);
@@ -22,8 +22,8 @@ RandomAccessIterator
 find_majority_element_bmv(RandomAccessIterator begin, RandomAccessIterator end);
 
 /*
- * Runs the algorithms and prints results on a given array.
- */
+* Runs the algorithms and prints results on a given array.
+*/
 template <typename RandomAccessIterator>
 void
 run_test(RandomAccessIterator begin, RandomAccessIterator end)
@@ -50,7 +50,7 @@ int main()
 	std::array<int, 0> no_elements{};
 	std::array<int, 1> one_element{ 15 };
 	std::array<int, 3> three_majority{ 10, 10, 10 };
-	std::array<int, 3> three_no_majority{ 10, 15, 20};
+	std::array<int, 3> three_no_majority{ 10, 15, 20 };
 	std::array<int, 4> four_no_majority{ 10, 15, 20, 20 };
 	std::array<int, 100> many_majority{
 		10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 4, 37, 12, 40, 80, 70, 26, 38, 66, 46,
@@ -127,8 +127,7 @@ find_majority_element_bmv(RandomAccessIterator begin, RandomAccessIterator end)
 		if (count == 0) {
 			candidate = it;
 			count = 1;
-		}
-		else {
+		} else {
 			if (*candidate == *it) {
 				count++; // same
 			} else {
@@ -138,7 +137,7 @@ find_majority_element_bmv(RandomAccessIterator begin, RandomAccessIterator end)
 	}
 
 	/* every time our candidate was found, we found a different element to pair it with
-	   it is definitely not a majority */
+		it is definitely not a majority */
 	if (count == 0)
 		return end;
 
